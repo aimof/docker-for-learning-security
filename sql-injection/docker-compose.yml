@@ -1,8 +1,21 @@
 version: '3.7'
 
 services:
-  app:
+  server:
     build: .
-    volumes:
-      - ./app:/app
-    working_dir: /app
+    ports:
+      - 8080:8080
+    restart: always
+    depends_on:
+      - mysql
+    command: ./server
+  mysql:
+    image: mysql:5.7.25
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: my-secret-pw
+      MYSQL_DATABASE: injection
+      MYSQL_USER: user
+      MYSQL_PASSWORD: passwd
