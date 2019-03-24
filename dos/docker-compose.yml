@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+  wordpress:
+    image: wordpress:5.1.1-php7.1-apache
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: veryweak
+      WORDPRESS_DB_NAME: wp
+      WORDPRESS_TALBE_PREFIX: wp_
+    depends_on:
+      - db
+    mem_limit: 100M
+  db:
+    image: mysql:5.7.25
+    restart: always
+    environment:
+      MYSQL_DATABASE: wp
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: veryweak
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
