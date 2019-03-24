@@ -11,6 +11,16 @@ I wish you become interested in computer security.
 * docker
 * docker-compose
 
+## How to use (basically)?
+
+```
+# in target machine
+docker-compose build
+docker-compose up
+
+# Try to attack
+```
+
 ## More details
 
 Show each directories' README.md .
