@@ -25,9 +25,10 @@ docker-compose up
 
 Show each directories' README.md .
 
-## Contribute
+## Contribution
 
-Contributes are welcome.
+Contributions are welcome.
+There are a lot of things beginners should know.
 Don't forget this repo is for beginners.
 
 ## CAUTION
